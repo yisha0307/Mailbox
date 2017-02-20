@@ -1,0 +1,26 @@
+{
+  "name": "mailbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --profile --colors --hot",
+    "build": "webpack --progress --profile --colors",
+    "test": "karma start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-react-transform": "^2.0.2",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
+    "react-transform-hmr": "^1.0.4",
+    "sass-loader": "^6.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
