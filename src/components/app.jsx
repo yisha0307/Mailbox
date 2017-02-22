@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import VSidebar from '../containers/vsidebar'
-import VMailList from '../containers/maillist'
-import VMailDetail from '../containers/maildetail'
-import ComposePart from './components/composepart'
+import VMailList from '../containers/vmaillist'
+import VMailDetail from '../containers/vmaildetail'
+import VComposePart from '../containers/vcomposepart'
 
 class Mailbox extends Component{
 	render(){
@@ -11,7 +11,6 @@ class Mailbox extends Component{
 			<VSidebar />
 			<VMailList />
 			<VMailDetail />
-			<ComposePart /> 
 		</div>)
 	}
 }

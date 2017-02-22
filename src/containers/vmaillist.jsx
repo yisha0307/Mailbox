@@ -4,13 +4,14 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {
 	return {
-		showmails: state.showmails
+		mails: state.mails,
+		currentSection: state.currentSection
 	}
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		openmail: ()=>dispatch({type: 'OPEN_MAIL', id: ownProps.index})
+		openmail: (id)=> {dispatch({type: 'OPEN_MAIL', id})}
 	}
 }
 

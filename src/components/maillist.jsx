@@ -1,12 +1,11 @@
 import React from 'react'
-import MailItem from './components/mailitem'
+import MailItem from './mailitem'
 
-const MailList = (showmails, openmail) => {
+const MailList = (mails, currentSection, openmail) => {
+	const displayMails = mails.filter(mail=> mail.tag === currentSection);
 	return (
 		<ul className = 'inbox--maillist'>
-		{showmails.map((showmail,index) => {
-			return <MailItem {...showmail} index = {index} openmail={openmail}/>
-		})}
+			{displayMails.map(mail => <MailItem onClick ={openmail(mail.id)} mail={mail}/>)}
 		</ul>);
 }
 

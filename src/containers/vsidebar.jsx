@@ -8,12 +8,10 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch,ownProps) =>{
 	return {
-		handleCompose : ()=>{
-			dispatch({type:'COMPOSE', text})
-		},
-		handleCategory: (category, ownProps) =>{
+		//缺一个handleCompose
+		handleCategory: () =>{
 			dispatch({type: 'SELECT_TAG', tag: ownProps.category})
 		}
 	}

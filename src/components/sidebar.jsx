@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Sidebar =(mails,handleCompose,handleCategory) => {
+const Sidebar =(mails,handleCategory) => {
 	const categorys  = ['inbox','sent','draft','span','trash'];
 	return (
 		<div className='inbox--sidebar'>
@@ -8,12 +8,16 @@ const Sidebar =(mails,handleCompose,handleCategory) => {
 			<p>front-end web developer</p>
 			<button onClick = {handleCompose}>Compose</button>
 			<ul>
-				{categorys.map((category) => <li category={category} onClick={()=>handleCategory()}>
-					{category}
-					<span>{mails.filter((mail) => mail.tag === {category}).length}</span>
-					</li>)}
+				<li category='inbox' onClick ={handleCategory}>INBOX
+					<span> {mails.filter(mail => mail.tag === 'inbox'&& mail.read=== false).length}</span>
+				</li>
+				<li category ='sent' onClick={handleCategory}>SENT</li>
+				<li category = 'deleted' onClick={handleCategory}>TRASH</li>
+				<li category = 'span' onClick={handleCategory}>SPAN
+					<span>{mails.fitler(mail => mail.tag === 'span').length}</span>
+				</li>
 			</ul>
-		</div>
+		</div>)
 }
 
 export default Sidebar

@@ -1,17 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import MailDetail from '../components/maldetail'
+import MailDetail from '../components/maildetail'
 
 const mapStateToProps = (state) => {
 	return {
-		selected: state.selected
+		mails: state.mails,
+		selectedEmailID: state.selectedEmailID
 	}
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		handleCompose: (text) => dispatch({type: 'COMPOSE',text}),
-		deleteemail: (id)=>dispatch({type: 'DELETE_MAIL',id})
+		deleteemail: (id)=> {dispatch({type: 'DELETE_MAIL',id})}
 	}
 }
 

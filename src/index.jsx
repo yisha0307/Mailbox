@@ -1,15 +1,18 @@
 import React,{Component} from 'react'
-import {render} from 'react-dom'
+import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 import Mailbox from './components/app'
+import {createStore} from 'redux'
+import inboxApp from '../reducers.js'
 
+const store = createStore(inboxApp)
 class App extends Component{
 	render(){
-		<Provider>
+		<Provider store={store}>
 			<Mailbox />
 		</Provider>
 	}
 }
 
-render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 

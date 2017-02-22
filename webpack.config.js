@@ -40,6 +40,10 @@ module: {
     },{
         test: /\.(png|jpg|jpeg)$/,
         loader: 'file-loader!url-loader?limit=1024'
+    },{
+        test: /\.json$/,
+        loader: 'json-loader',
+        exclude: /node_modules/
     }]
 },
 resolve:{
