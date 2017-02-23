@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {
 	return {
-		mails: state.mails,
+		mails: state.showUnread? state.mails.filter(mail => mail.read==='false') : state.mails,
 		currentSection: state.currentSection,
 		display: state.composeORnot? 'none':'block'
 	}
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
+		turnunread: (bool) => {dispatch({type:'TURN_UNREAD', bool})},
 		openmail: (id)=> {dispatch({type: 'OPEN_MAIL', id})}
 	}
 }

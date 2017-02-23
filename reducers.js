@@ -73,7 +73,16 @@ const composeORnot = (state = false,action) => {
 			return state
 	}
 }
+//5、新加一个unread
+const showUnread = (state = false,action) => {
+	switch(action.type){
+		case 'TURN_UNREAD':
+			return action.bool;
+		default: 
+			return state
+	}
+}
 
-const inboxApp = combineReducers({mails,currentSection,selectedEmailID,composeORnot});
+const inboxApp = combineReducers({mails,currentSection,selectedEmailID,composeORnot,showUnread});
 export default inboxApp
 
