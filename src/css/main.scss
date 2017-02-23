@@ -1,0 +1,32 @@
+$bgc-1:#dbc2bb;
+$bgc-2:#f0e4e1;
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,body{
+	min-height: 100%;
+	background: linear-gradient(-45deg, $bgc-1 20%,$bgc-2)
+}
+
+.mailbox{
+	padding: 10px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	height: 80%;
+	width:75%;
+	overflow: none;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	box-shadow: 0 0 20px #eee;
+	border-radius: 5px;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:center;
+}

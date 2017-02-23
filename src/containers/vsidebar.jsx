@@ -11,9 +11,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch,ownProps) =>{
 	return {
-		//缺一个handleCompose
-		handleCategory: () =>{
-			dispatch({type: 'SELECT_TAG', tag: ownProps.category})
+		turncompose: () => {
+			dispatch({type: 'TURN_COMPOSE'})
+		},
+		handleCategory: (tag) =>{
+			dispatch({type: 'SELECT_TAG', tag: tag})
 		}
 	}
 }
@@ -22,7 +24,7 @@ const VSidebar = connect(mapStateToProps,mapDispatchToProps)(Sidebar)
 export default VSidebar
 
 function countunread(mails){
-	const unread = mails.filter(mail => mail.read === false);
+	const unread = mails.filter(mail => mail.tag === 'inbox' && mail.read === 'false');
 	return unread.length;
 }
 function counttrash(mails){

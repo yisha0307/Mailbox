@@ -1,19 +1,20 @@
+import styles from '../css/sidebar.scss'
 import React,{Component} from 'react'
 
-const Sidebar =({unreadcount,trashcount,handleCategory}) => {
+const Sidebar =({unreadcount,trashcount,handleCategory,turncompose}) => {
 	return (
-		<div className='inbox--sidebar'>
+		<div className={styles.sidebar}>
 			<h3>Chen Yisha</h3>
 			<p>front-end web developer</p>
-			<button >Compose</button>
+			<button onClick={turncompose}>Compose</button>
 			<ul>
-				<li category='inbox' onClick ={handleCategory}>INBOX
+				<li onClick ={()=>handleCategory('inbox')}>INBOX
 					<span>{unreadcount}</span>
 				</li>
-				<li category ='sent' onClick={handleCategory}>SENT</li>
-				<li category = 'deleted' onClick={handleCategory}>TRASH
+				<li onClick={()=>handleCategory('sent')}>SENT</li>
+				<li onClick={()=>handleCategory('deleted')}>TRASH
 				<span>{trashcount}</span></li>
-				<li category = 'span' onClick={handleCategory}>SPAN
+				<li onClick={()=>handleCategory('span')}>SPAN
 				</li>
 			</ul>
 		</div>)

@@ -1,11 +1,12 @@
 import React from 'react'
 import MailItem from './mailitem'
+import styles from '../css/maillist.scss'
 
-const MailList = ({mails, currentSection, openmail}) => {
+const MailList = ({display,mails, currentSection, openmail}) => {
 	const displayMails = mails.filter(mail=> mail.tag === currentSection);
 	return (
-		<ul className = 'inbox--maillist'>
-			{displayMails.map(mail => <MailItem onClick ={openmail(mail.id)} mail={mail}/>)}
+		<ul className = {styles.maillist} style={{display: display}}>
+			{displayMails.map(mail => <MailItem  mail={mail}/>)}
 		</ul>);
 }
 

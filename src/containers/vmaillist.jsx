@@ -5,7 +5,8 @@ import {connect} from 'react-redux'
 const mapStateToProps = (state) => {
 	return {
 		mails: state.mails,
-		currentSection: state.currentSection
+		currentSection: state.currentSection,
+		display: state.composeORnot? 'none':'block'
 	}
 }
 

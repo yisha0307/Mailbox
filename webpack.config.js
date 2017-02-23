@@ -32,11 +32,11 @@ module: {
         exclude: /node_modules/
     },{
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader','sass-loader'],
+        loaders: ['style-loader', 'css-loader?modules','sass-loader'],
         exclude: /node_modules/
     },{
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?sourceMap'],
+        loaders: ['style-loader', 'css-loader?modules'],
     },{
         test: /\.(png|jpg|jpeg)$/,
         loader: 'file-loader!url-loader?limit=1024'
