@@ -1,6 +1,7 @@
 import React from 'react'
 
 const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}) => {
+	if(selectedEmailID === null){return <div className='maildetail--nothing' style={{display:'none'}}/>}
 	const selected = mails[selectedEmailID];
 	let subject, message,address;
 	return (

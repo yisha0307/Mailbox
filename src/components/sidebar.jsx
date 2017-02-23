@@ -1,7 +1,7 @@
 import styles from '../css/sidebar.scss'
 import React,{Component} from 'react'
 
-const Sidebar =({unreadcount,trashcount,handleCategory,turncompose}) => {
+const Sidebar =({unreadcount,trashcount,sentcount,handleCategory,turncompose}) => {
 	return (
 		<div className={styles.sidebar}>
 			<h3>Chen Yisha</h3>
@@ -11,7 +11,8 @@ const Sidebar =({unreadcount,trashcount,handleCategory,turncompose}) => {
 				<li onClick ={()=>handleCategory('inbox')}>INBOX
 					<span>{unreadcount}</span>
 				</li>
-				<li onClick={()=>handleCategory('sent')}>SENT</li>
+				<li onClick={()=>handleCategory('sent')}>SENT
+				<span>{sentcount}</span></li>
 				<li onClick={()=>handleCategory('deleted')}>TRASH
 				<span>{trashcount}</span></li>
 				<li onClick={()=>handleCategory('span')}>SPAN

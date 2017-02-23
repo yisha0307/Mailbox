@@ -5,7 +5,8 @@ import {connect} from 'react-redux'
 const mapStateToProps = (state) => {
 	return {
 		unreadcount: countunread(state.mails),
-		trashcount: counttrash(state.mails)
+		trashcount: counttrash(state.mails),
+		sentcount: countsent(state.mails)
 	}
 }
 
@@ -30,4 +31,8 @@ function countunread(mails){
 function counttrash(mails){
 	const trash = mails.filter(mail => mail.tag === 'deleted');
 	return trash.length
+}
+function countsent(mails){
+	const sent = mails.filter(mail => mail.tag === 'sent')
+	return sent.length
 }
