@@ -1,7 +1,7 @@
 import React from 'react'
 import MailItem from './mailitem'
 
-const MailList = (mails, currentSection, openmail) => {
+const MailList = ({mails, currentSection, openmail}) => {
 	const displayMails = mails.filter(mail=> mail.tag === currentSection);
 	return (
 		<ul className = 'inbox--maillist'>

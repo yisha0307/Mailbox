@@ -8,9 +8,10 @@ import inboxApp from '../reducers.js'
 const store = createStore(inboxApp)
 class App extends Component{
 	render(){
+		return(
 		<Provider store={store}>
 			<Mailbox />
-		</Provider>
+		</Provider>)
 	}
 }
 

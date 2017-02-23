@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
+		//还需要一个handleCompose
 		deleteemail: (id)=> {dispatch({type: 'DELETE_MAIL',id})}
 	}
 }

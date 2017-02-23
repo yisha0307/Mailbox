@@ -10,7 +10,7 @@ const getprettytime = (time)=>{
 	return `${day} ${mon}`;
 }
 
-const MailItem = (mail, onClick) => (
+const MailItem = ({mail, onClick}) => (
 	<li className ='inbox--mailitem' onClick = {onClick}>
 	<h5>{mail.from}</h5>
 	<span>{getprettytime(mail.time)}</span>
