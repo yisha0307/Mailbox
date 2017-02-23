@@ -50,7 +50,9 @@ const selectedEmailID = (state = 0, action) => {
 	switch(action.type){
 		case 'OPEN_MAIL':
 			return action.id;
-		
+		case 'DELETE_MAIL':
+			const selected= MAILS.find(mail => mail.tag === action.tag && mail.id > action.id);
+			return selected.id
 		default:
 			return state
 	}

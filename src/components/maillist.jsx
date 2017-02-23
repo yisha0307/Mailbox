@@ -6,7 +6,7 @@ const MailList = ({display,mails, currentSection, openmail}) => {
 	const displayMails = mails.filter(mail=> mail.tag === currentSection);
 	return (
 		<ul className = {styles.maillist} style={{display: display}}>
-			{displayMails.map(mail => <MailItem  mail={mail}/>)}
+			{displayMails.map(mail => <MailItem openmail={openmail} mail={mail}/>)}
 		</ul>);
 }
 

@@ -10,6 +10,7 @@ const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}
 				{selected.address}</pre>
 				<p>{selected.subject}</p>
 				<span>{selected.time.split(' ').join('|')}</span>
+				<i className = 'fa fa-trash' onClick = {()=>deleteemail(selectedEmailID,selected.tag)} />
 			</div>
 			<div className = 'detail--body'>
 			{selected.message}

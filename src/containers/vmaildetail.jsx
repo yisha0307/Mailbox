@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
 			tag:'sent',
 			read:true
 		})},
-		deleteemail: (id)=> {dispatch({type: 'DELETE_MAIL',id})}
+		deleteemail: (id,tag)=> {dispatch({type: 'DELETE_MAIL',id,tag})}
 	}
 }
 
