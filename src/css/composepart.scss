@@ -16,8 +16,8 @@ $bg-gray: rgb(246,250,249);
 		padding-left: 40px;
 	}
 	form{
-		background-color:$bg-gray;
-		height: 300px;
+		background:linear-gradient(180deg, $bg-gray 50%, #fff);
+		height: 400px;
 		padding: 20px;
 		.to input,.subject input{
 			margin:5px;

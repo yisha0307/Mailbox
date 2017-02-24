@@ -17,9 +17,9 @@ const Sidebar =({currentSection, unreadcount,trashcount,sentcount,handleCategory
 				<li onClick={()=>handleCategory('deleted')} className={currentSection==='deleted'? styles.currentSection :styles.notcurrentSection}>	
 					<i className='fa fa-trash-o' />
 				<span>TRASH</span><span className={styles.count}>{trashcount}</span></li>
-				<li onClick={()=>handleCategory('span')} className={currentSection==='span'? styles.currentSection :styles.notcurrentSection}>
+				<li onClick={()=>handleCategory('spam')} className={currentSection==='spam'? styles.currentSection :styles.notcurrentSection}>
 					<i className='fa fa-dot-circle-o' />
-					<span>SPAN</span>
+					<span>SPAM</span>
 				</li>
 			</ul>
 		</div>)
