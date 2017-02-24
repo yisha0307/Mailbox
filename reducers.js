@@ -53,6 +53,7 @@ const selectedEmailID = (state = null, action) => {
 		case 'DELETE_MAIL':
 			const mails = action.mails
 			const selected= mails.find(mail => mail.tag === action.tag && mail.id > action.id);
+			if(!selected){return null}
 			return selected.id
 		case 'SELECT_TAG':
 			return null

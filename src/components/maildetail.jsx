@@ -4,15 +4,16 @@ import styles from '../css/maildetail.scss'
 const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}) => {
 	if(selectedEmailID === null){return <div className={styles.nothing} style={{display:display}}/>}
 	const selected = mails[selectedEmailID];
+	const deleteable = selected.tag === 'deleted'? 'none':'inline-block'
 	let subject, message,address;
 	return (
 		<div className = {styles.maildetail} style={{display:display}}>
 			<div className ={styles.title}>
-				<p className={styles.from}>FROM: {selected.from}</p>
+				<p className={styles.from} style={{display: selected.tag==='sent'? 'none':'inline-block'}}>FROM: {selected.from}</p>
 				<p className={styles.address}>{selected.address}</p>
 				<p className={styles.subject}>{selected.subject}</p>
 				<span>{selected.time.split(' ').join('|')}</span>
-				<i className = 'fa fa-trash' title='delete' onClick = {()=>deleteemail(mails,selectedEmailID,selected.tag)} />
+				<i className = 'fa fa-trash' style={{display: deleteable}} title='delete' onClick = {()=>deleteemail(mails,selectedEmailID,selected.tag)} />
 			</div>
 			<div className={styles.background}>
 			<div className = {styles.body}>

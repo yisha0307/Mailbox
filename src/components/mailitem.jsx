@@ -15,7 +15,7 @@ const MailItem = ({selectedEmailID,mail, openmail}) => {
 	const display=mail.read==='false'? 'inline-block':'none'
 	return(
 		<li className ={selectedEmailID === mail.id? styles.selected: styles.mailitem} onClick = {()=>openmail(mail.id)}>
-		<h5>{mail.from}</h5>
+		<h5>{mail.tag==='sent'? mail.address: mail.from}</h5>
 		<div className={styles.circle} style={{display: display}}/>
 		<span>{getprettytime(mail.time)}</span>
 		<p>{mail.subject}</p>
