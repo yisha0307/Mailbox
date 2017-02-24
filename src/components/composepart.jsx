@@ -14,13 +14,15 @@ const ComposePart = ({display, handleCompose}) => {
 			subject.value =''
 		}}>
 		<div className='compose--to'>
-		<p>To</p>
+		<div className={styles.to}>To:
 		<input type = 'text' ref={(v)=>towhom = v} placeholder = 'address'/>
-		<p>Subject</p>
+		</div>
+		<div className={styles.subject}>Subject:
 		<input type ='text' ref={(v) => subject = v} placeholder='subject' />
 		</div>
-		<input type ='textarea' ref={(v) => mailbody = v}/>
-		<input type='submit' value='SEND' />
+		</div>
+		<textarea type ='textarea' cols='80' rows='7' ref={(v) => mailbody = v}/>
+		<input className={styles.send} type='submit' value='SEND' />
 		</form>
 	</div>
 		);

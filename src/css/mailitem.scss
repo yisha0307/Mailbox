@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Muli');
+
+$text-gray: rgb(134,137,136);
+$green: rgb(43,214,126);
+$light-green: #cef5e2;
+
+.mailitem{
+	font-family: 'Muli', sans-serif;
+	font-size:12px;
+	background-color: #fff;
+	margin:10px;
+	padding:5px;
+	>h5{
+		display: inline-block;
+		font-size:14px;
+	}
+	>span{
+		display: inline-block;
+		position: absolute;
+		right: 20px;
+	}
+	>p{
+		color:$text-gray;
+	}
+}
+
+.selected{
+	font-family: 'Muli', sans-serif;
+	font-size:12px;
+	background-color: $green;
+	color:#fff;
+	margin:10px;
+	padding:5px;
+	>h5{
+		display: inline-block;
+		font-size:14px;
+	}
+	>span{
+		display: inline-block;
+		position: absolute;
+		right: 20px;
+	}
+	>p{
+		color:$text-gray;
+	}
+}
+
+.circle{
+	width:8px;
+	height:8px;
+	border-radius:50%;
+	background-color: $green;
+	position: absolute;
+	right:10px;
+}

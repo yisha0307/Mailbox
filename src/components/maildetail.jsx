@@ -1,34 +1,35 @@
 import React from 'react'
+import styles from '../css/maildetail.scss'
 
 const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}) => {
-	if(selectedEmailID === null){return <div className='maildetail--nothing' style={{display:'none'}}/>}
+	if(selectedEmailID === null){return <div className={styles.nothing} style={{display:display}}/>}
 	const selected = mails[selectedEmailID];
 	let subject, message,address;
 	return (
-		<div className = 'inbox--maildetail' style={{display:display}}>
-			<div className ='detail--title'>
-				<pre>{selected.from}
-				{selected.address}</pre>
-				<p>{selected.subject}</p>
+		<div className = {styles.maildetail} style={{display:display}}>
+			<div className ={styles.title}>
+				<p className={styles.from}>FROM: {selected.from}</p>
+				<p className={styles.address}>{selected.address}</p>
+				<p className={styles.subject}>{selected.subject}</p>
 				<span>{selected.time.split(' ').join('|')}</span>
-				<i className = 'fa fa-trash' onClick = {()=>deleteemail(selectedEmailID,selected.tag)} />
+				<i className = 'fa fa-trash' title='delete' onClick = {()=>deleteemail(mails,selectedEmailID,selected.tag)} />
 			</div>
-			<div className = 'detail--body'>
+			<div className={styles.background}>
+			<div className = {styles.body}>
 			{selected.message}
 			</div>
-			<div className = 'detail--composepart'>
+			<div className = {styles.reply}>
 				<form onSubmit = {(e) => {e.preventDefault();
-					if(!subject.value.trim() || !address.value.trim()){return;}
-					handlecompose(address.value, message.value, subject.value);
-					subject.value ='';
+					if(!message.value.trim()){return;}
+					const subject = 'reply:'+ selected.subject;
+					handlecompose(selected.address, message.value, subject);
 					message.value ='';
 				}}>
-				<input type='text' ref = {v => address = v} value ={selected.address}/>
-				<input type='text' ref = {v => subject = v} placeholder="subject" />
 				<br/>
-				<textarea ref={v => message = v} />
-				<input type ='submit' value='SEND'/>
+				<textarea cols='75' rows='5'  ref={v => message = v} />
+				<input className ={styles.send} type ='submit' value='SEND'/>
 				</form>
+			</div>
 			</div>
 		</div>
 			);

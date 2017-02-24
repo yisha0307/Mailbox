@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {
 	return {
+		selectedEmailID :state.selectedEmailID ,
+		showunread: state.showUnread,
 		mails: state.showUnread? state.mails.filter(mail => mail.read==='false') : state.mails,
 		currentSection: state.currentSection,
 		display: state.composeORnot? 'none':'block'

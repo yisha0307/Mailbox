@@ -39,7 +39,7 @@ module: {
         loaders: ['style-loader', 'css-loader?modules'],
     },{
         test: /\.(png|jpg|jpeg)$/,
-        loader: 'file-loader!url-loader?limit=1024'
+        loader: 'file-loader'
     },{
         test: /\.json$/,
         loader: 'json-loader',

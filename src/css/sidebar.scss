@@ -1,4 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Muli');
+
+$text-gray: rgb(134,137,136);
+$green: rgb(43,214,126);
+$light-green: #cef5e2;
+
 .sidebar{
+	padding-top:20px;
 	position: relative;
-	width:80%;
+	width:200px;
+	font-family: 'Muli', sans-serif;
+	>button{
+		position: relative;
+		left:50%;
+		transform:translate(-50%);
+		text-align: center;
+		border-style: none;
+		outline: 0;
+		width:130px;
+		height: 35px;
+		background-color: $green;
+		text-transform: uppercase;
+		color:#fff;
+		border-radius:2px;
+		margin-top:10px;
+		box-shadow: 0 0 20px $light-green;
+		>i{
+			margin-right: 5px;
+		}
+	}
+	>ul{
+		margin-top: 30px;
+		text-align: left;
+		list-style: none;
+		li{
+			padding-left:30px;
+			margin:5px 0 5px 0;
+			height: 40px;
+			line-height: 40px;
+			font-size:13px;
+			font-weight: 300;
+			color:$text-gray;
+			i{
+				margin-right: 8px;
+			}
+
+		}
+	}
+}
+.count{
+	position:absolute;
+	right: 50px;
+	
+}
+
+.currentSection{
+	border-left: 5px solid $green;
+	&:after{
+			content: '';
+			background:linear-gradient(90deg, $light-green, #fff);
+			width:30px;
+			height:40px;
+			display: block;
+			position: relative;
+			left:-30px;
+			top:-40px;	
+			z-index:-1;
+			}
+			i,span{
+				color: black;
+				font-weight:800;
+			}
 }

@@ -1,21 +1,25 @@
 import styles from '../css/sidebar.scss'
 import React,{Component} from 'react'
 
-const Sidebar =({unreadcount,trashcount,sentcount,handleCategory,turncompose}) => {
+const Sidebar =({currentSection, unreadcount,trashcount,sentcount,handleCategory,turncompose}) => {
 	return (
-		<div className={styles.sidebar}>
-			<h3>Chen Yisha</h3>
-			<p>front-end web developer</p>
-			<button onClick={turncompose}>Compose</button>
+		<div className={styles.sidebar}>			
+			<button onClick={turncompose}>
+			<i className="fa fa-pencil-square-o"/>Compose</button>
 			<ul>
-				<li onClick ={()=>handleCategory('inbox')}>INBOX
-					<span>{unreadcount}</span>
+				<li onClick ={()=>handleCategory('inbox')} className={currentSection==='inbox'? styles.currentSection :styles.notcurrentSection}>
+					<i className = 'fa fa-envelope-open-o' />
+					<span>INBOX</span><span className={styles.count}>{unreadcount}</span>
 				</li>
-				<li onClick={()=>handleCategory('sent')}>SENT
-				<span>{sentcount}</span></li>
-				<li onClick={()=>handleCategory('deleted')}>TRASH
-				<span>{trashcount}</span></li>
-				<li onClick={()=>handleCategory('span')}>SPAN
+				<li onClick={()=>handleCategory('sent')} className={currentSection==='sent'? styles.currentSection :styles.notcurrentSection}>
+					<i className = 'fa fa-paper-plane-o' />
+				<span>SENT</span><span className={styles.count}>{sentcount}</span></li>
+				<li onClick={()=>handleCategory('deleted')} className={currentSection==='deleted'? styles.currentSection :styles.notcurrentSection}>	
+					<i className='fa fa-trash-o' />
+				<span>TRASH</span><span className={styles.count}>{trashcount}</span></li>
+				<li onClick={()=>handleCategory('span')} className={currentSection==='span'? styles.currentSection :styles.notcurrentSection}>
+					<i className='fa fa-dot-circle-o' />
+					<span>SPAN</span>
 				</li>
 			</ul>
 		</div>)

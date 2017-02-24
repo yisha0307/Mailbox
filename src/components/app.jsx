@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import Titlebar from './titlebar'
 import VSidebar from '../containers/vsidebar'
 import VMailList from '../containers/vmaillist'
 import VMailDetail from '../containers/vmaildetail'
@@ -9,10 +10,13 @@ class Mailbox extends Component{
 	render(){
 		return(
 		<div className= {styles.mailbox}>
-			<VSidebar />
-			<VMailList />
-			<VMailDetail />
-			<VComposePart />
+			<Titlebar />
+			<div className = {styles.flexb}>
+				<VSidebar />
+				<VMailList />
+				<VMailDetail />
+				<VComposePart />
+			</div>
 		</div>)
 	}
 }

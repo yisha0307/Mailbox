@@ -1,4 +1,44 @@
+$bg-gray: rgb(246,250,249);
+$text-gray: rgb(134,137,136);
+$red:#f25333;
+
 .maillist{
-	overflow: scroll;
-	width: 100%;
+	position: relative;
+	width: 250px;
+	height: auto;
+	background-color: $bg-gray;
+}
+.buttons{
+	position: fixed;
+	padding-left:10px;
+	width: 250px;
+	background-color: #eee;
+	height: 40px;
+	>button{
+		text-align: center;
+		border-top:none;
+		border-left:none;
+		border-right:none;
+		outline:0;
+		width:60px;
+		background:none;
+		height: 40px;
+		cursor: pointer;	
+		font-size:12px;	
+	}
+}
+.red{
+	color:black;
+	border-bottom: 2px solid $red;
+}
+.unred{
+	color: $text-gray;
+	border-bottom:none;
+}
+
+ul{
+	position: relative;
+	margin-top:42px;
+	overflow-y: scroll;
+	height: 458px;
 }

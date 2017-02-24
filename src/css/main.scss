@@ -13,20 +13,21 @@ html,body{
 }
 
 .mailbox{
-	padding: 10px;
 	position:absolute;
 	top:50%;
 	left:50%;
-	height: 80%;
-	width:75%;
-	overflow: none;
 	transform: translate(-50%,-50%);
+	height: auto;
+	width:auto;
 	background-color: #fff;
 	box-shadow: 0 0 20px #eee;
 	border-radius: 5px;
+}
+.flexb{
 	display: flex;
 	display: -webkit-flex;
 	flex-direction:row;
 	flex-wrap:nowrap;
 	justify-content:center;
+	height: 500px;
 }

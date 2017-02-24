@@ -1,5 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Muli');
+
+$text-gray: rgb(108,120,114);
+$green: rgb(43,214,126);
+$light-green: #cef5e2;
+$bg-gray: rgb(246,250,249);
+
 .composepart{
+	font-family: 'Muli', sans-serif;
 	position:relative;
-	left:-10%;
-	width:100%;
+	width:800px;
+	border-left:2px solid $bg-gray;
+	h1{
+		height: 80px;
+		line-height: 80px;
+		padding-left: 40px;
+	}
+	form{
+		background-color:$bg-gray;
+		height: 300px;
+		padding: 20px;
+		.to input,.subject input{
+			margin:5px;
+			width:200px;
+			height: 25px;
+			outline: 0;
+			border:2px solid #eee;
+		}
+		textarea{
+			margin-left: 63px;
+			margin-top:15px;
+			border:2px solid #eee;
+			border-radius: 3px;
+			resize:none;
+		}
+	}
 }
+
+.to{
+	padding-left:36px;
+}
+.send{
+	display: block;
+	border-style:none;
+	outline:0;
+	font-weight: 400;
+	font-size:16px;
+	text-transform: uppercase;
+	padding:5px 20px;
+	background-color: $green;
+	border-radius:3px;
+	color:#fff;
+	cursor: pointer;
+	position: absolute;
+	left:81px;
+	margin-top:10px;
+	&:hover{
+		box-shadow: 0 0 20px $green;
+	}
+}
+

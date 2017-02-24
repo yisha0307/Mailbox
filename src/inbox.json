@@ -3,8 +3,8 @@
 		"from": "Maxime Preaux",
 		"address": "maxime@codepen.io",
 		"time": "2016-10-07 15:35:14",
-		"message": "This is my first attempt at using React.\nDuis cursus, diam at pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras",
-		"subject": "Messing with React.js",
+		"message": "This is my first attempt at using Redux.\nDuis cursus, diam at pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras",
+		"subject": "Messing with Redux.js",
 		"tag": "inbox",
 		"read": "false"
 	},

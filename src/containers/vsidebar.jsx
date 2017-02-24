@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {
 	return {
+		currentSection: state.currentSection,
 		unreadcount: countunread(state.mails),
 		trashcount: counttrash(state.mails),
 		sentcount: countsent(state.mails)

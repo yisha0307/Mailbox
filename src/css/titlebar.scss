@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Muli');
+
+$bg-gray:#f1f4f3;
+$border-gray: #eee;
+$text-gray: rgb(101,107,104);
+$green: rgb(43,214,126);
+
+.titlebar{
+	background-color: $bg-gray;
+	border-radius: 5px 5px 0 0;
+	height: 60px;
+	border-bottom: 2px solid $border-gray;
+	>p{
+		display: inline-block;
+		font-size: 30px;
+		line-height: 60px;
+		margin-left:5%;
+		font-family: 'Dancing Script', cursive;
+		color: $text-gray;
+		i{
+			margin-right:20px; 
+			color:$green;
+		}
+	}
+	>span{
+		position: absolute;
+		right:14%;
+		line-height: 60px;
+		cursor: pointer;
+		font-family: 'Muli', sans-serif;
+		color:$text-gray;
+		font-weight: 800;
+		text-shadow: 0 0 10px #eee;
+		font-size:14px;
+		i{
+			margin-left:4px;
+			font-size:16px;
+		}
+	}
+}
+
+.profileimg{
+	height: auto;
+	width:45px;
+	-webkit-clip-path:circle(22px at 22px 40px);
+	object-fit: cover;
+	position: absolute;
+	top:-10px;
+	left:88%;
+}

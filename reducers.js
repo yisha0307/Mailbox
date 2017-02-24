@@ -51,7 +51,8 @@ const selectedEmailID = (state = null, action) => {
 		case 'OPEN_MAIL':
 			return action.id;
 		case 'DELETE_MAIL':
-			const selected= MAILS.find(mail => mail.tag === action.tag && mail.id > action.id);
+			const mails = action.mails
+			const selected= mails.find(mail => mail.tag === action.tag && mail.id > action.id);
 			return selected.id
 		case 'SELECT_TAG':
 			return null
