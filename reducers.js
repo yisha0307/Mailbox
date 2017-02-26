@@ -15,11 +15,11 @@ const mails = (state = MAILS, action) => {
 	switch(action.type){
 		case 'COMPOSE':
 			return [...state, {from: action.from, address: action.address, time:action.time, message: action.message, subject:action.subject, id: id++, tag: action.tag, read:'true'}] 
-		case 'DELETE_MAIL':
+		case 'MOVE_MAIL':
 			//根据id把这封邮件找出来，tag改成'deleted'
 			return state.map(mail => {
 				if(mail.id !== action.id){return mail;}else{
-					return(Object.assign({}, mail, {"tag": "deleted"}));
+					return(Object.assign({}, mail, {"tag": action.tag}));
 				}
 			})
 		case 'OPEN_MAIL':
@@ -50,9 +50,9 @@ const selectedEmailID = (state = null, action) => {
 	switch(action.type){
 		case 'OPEN_MAIL':
 			return action.id;
-		case 'DELETE_MAIL':
+		case 'MOVE_MAIL':
 			const mails = action.mails
-			const selected= mails.find(mail => mail.tag === action.tag && mail.id > action.id);
+			const selected = mails.find(mail => mail.tag === action.origTag && mail.id > action.id);
 			if(!selected){return null}
 			return selected.id
 		case 'SELECT_TAG':
@@ -76,7 +76,7 @@ const composeORnot = (state = false,action) => {
 	}
 }
 //5、新加一个unread
-const showUnread = (state = false,action) => {
+const showUnread = (state = false, action) => {
 	switch(action.type){
 		case 'TURN_UNREAD':
 			return action.bool;
@@ -84,7 +84,29 @@ const showUnread = (state = false,action) => {
 			return state
 	}
 }
+//6、新加一个validateAdd和validateText，看地址是不是符合格式要求, 以及有没有填subject
+const validateAdd = (state = null, action) => {
+	switch(action.type){
+		case 'VALIDATE':
+			const regExp = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
+			const flag = regExp.test(action.value)
+			return flag
+		default:
+			return state
+	}
+}
+const validateText = (state = null, action) => {
+	switch(action.type){
+		case 'VALIDATE_TEXT':
+			if(action.value === ''){
+				return false
+			}
+			return true
+		default:
+			return state
+	}
+}
 
-const inboxApp = combineReducers({mails,currentSection,selectedEmailID,composeORnot,showUnread});
+const inboxApp = combineReducers({mails,currentSection,selectedEmailID,composeORnot,showUnread,validateAdd,validateText});
 export default inboxApp
 

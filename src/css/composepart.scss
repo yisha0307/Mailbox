@@ -4,6 +4,7 @@ $text-gray: rgb(108,120,114);
 $green: rgb(43,214,126);
 $light-green: #cef5e2;
 $bg-gray: rgb(246,250,249);
+$red:#f25333;
 
 .composepart{
 	font-family: 'Muli', sans-serif;
@@ -24,7 +25,6 @@ $bg-gray: rgb(246,250,249);
 			width:200px;
 			height: 25px;
 			outline: 0;
-			border:2px solid #eee;
 		}
 		textarea{
 			margin-left: 63px;
@@ -58,4 +58,7 @@ $bg-gray: rgb(246,250,249);
 		box-shadow: 0 0 20px $green;
 	}
 }
-
+.wrongFormat{
+	border: 1px solid $red;
+	border-radius:2px;
+}

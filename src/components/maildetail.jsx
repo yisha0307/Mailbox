@@ -13,7 +13,10 @@ const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}
 				<p className={styles.address}>{selected.address}</p>
 				<p className={styles.subject}>{selected.subject}</p>
 				<span>{selected.time.split(' ').join('|')}</span>
-				<i className = 'fa fa-trash' style={{display: deleteable}} title='delete' onClick = {()=>deleteemail(mails,selectedEmailID,selected.tag)} />
+				<i className = 'fa fa-trash' style={{display: deleteable}} title='delete' 
+					onClick = {()=>deleteemail(
+							mails,selectedEmailID,selected.tag
+						)} />
 			</div>
 			<div className={styles.background}>
 			<div className = {styles.body}>

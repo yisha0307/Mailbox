@@ -3,7 +3,9 @@ import ComposePart from '../components/composepart'
 
 const mapStateToProps = (state) => {
 	return {
-		display: state.composeORnot? 'block':'none'
+		display: state.composeORnot? 'block':'none',
+		validateAdd : state.validateAdd,
+		validateText: state.validateText
 	}
 }
 
@@ -18,7 +20,19 @@ const mapDispatchToProps = (dispatch) => {
 			subject: subject,
 			tag:'sent',
 			read:true
-		})}
+		})},
+		validateAddress : (value) => {
+			dispatch({
+				type:'VALIDATE',
+				value: value
+			})
+		},
+		validateT : (text) => {
+			dispatch({
+				type: 'VALIDATE_TEXT',
+				value: text
+			})
+		}
 	}
 }
 
