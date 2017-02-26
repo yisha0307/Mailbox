@@ -19,7 +19,6 @@ devServer: {
     inline: true//实时刷新
 },
 plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true}),
     new webpack.HotModuleReplacementPlugin()
 ],
 module: {
