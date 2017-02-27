@@ -33,6 +33,15 @@ const mails = (state = MAILS, action) => {
 	}
 }
 
+const searchText = (state ='', action) => {
+	switch(action.type){
+		case 'SEARCH_MAIL':
+			return action.value;
+		default:
+			return state
+		}
+}
+
 //2、currentSection
 //显示在mailist里的mails
 const currentSection = (state = 'inbox', action) => {
@@ -107,6 +116,7 @@ const validateText = (state = null, action) => {
 	}
 }
 
-const inboxApp = combineReducers({mails,currentSection,selectedEmailID,composeORnot,showUnread,validateAdd,validateText});
+
+const inboxApp = combineReducers({mails,searchText,currentSection,selectedEmailID,composeORnot,showUnread,validateAdd,validateText});
 export default inboxApp
 

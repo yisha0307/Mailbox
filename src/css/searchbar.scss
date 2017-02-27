@@ -1,0 +1,23 @@
+$green: rgb(43,214,126);
+$light-green: #cef5e2;
+$bg-gray: rgb(246,250,249);
+
+.searchbar{
+	position: absolute;
+	left:58%;
+	top:17px;
+	input{
+		width:150px;
+		height:27px;
+		border:1px $bg-gray solid;
+	}
+	button{
+		width:27px;
+		height: 27px;
+		background-color: $green;
+		outline: 0;
+		border-style: none;
+		border-radius:2px;
+		color:#fff;
+	}
+}

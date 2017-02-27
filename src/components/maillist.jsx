@@ -2,8 +2,12 @@ import React from 'react'
 import MailItem from './mailitem'
 import styles from '../css/maillist.scss'
 
-const MailList = ({selectedEmailID,showunread, display,mails, currentSection, turnunread, openmail}) => {
-	const displayMails = mails.filter(mail=> mail.tag === currentSection);
+const MailList = ({searchText, selectedEmailID,showunread, display,mails, currentSection, turnunread, openmail}) => {
+	const displayMail = mails.filter(mail=> mail.tag === currentSection);
+	const displayMails = displayMail.filter(mail => mail.from.includes(searchText)
+				|| mail.address.includes(searchText)
+				|| mail.message.includes(searchText)
+				|| mail.subject.includes(searchText))
 	return (
 		<div className = {styles.maillist} style={{display: display}}>
 		<div className={styles.buttons}>
