@@ -62,3 +62,12 @@ $red:#f25333;
 	border: 1px solid $red;
 	border-radius:2px;
 }
+.success{
+	display: none;
+	position: absolute;
+	color: $green;
+	font-size:100px;
+	left:40%;
+	top:40%;
+	transform: translate(-50%,-100%);
+}

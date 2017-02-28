@@ -116,7 +116,6 @@ const validateText = (state = null, action) => {
 	}
 }
 
-
 const inboxApp = combineReducers({mails,searchText,currentSection,selectedEmailID,composeORnot,showUnread,validateAdd,validateText});
 export default inboxApp
 

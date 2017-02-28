@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
 	return {
 		display: state.composeORnot? 'block':'none',
 		validateAdd : state.validateAdd,
-		validateText: state.validateText
+		validateText: state.validateText,
 	}
 }
 

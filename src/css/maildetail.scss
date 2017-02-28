@@ -80,3 +80,16 @@ $light-green: #cef5e2;
 .background{
 	background: linear-gradient(180deg, #eee,#fff);
 }
+.success{
+	display: none;
+	position: absolute;
+	color: $green;
+	font-size:100px;
+	left:50%;
+	top:47%;
+	transform: translate(-50%,-100%);
+	.fa{
+		background-color:#fff;
+
+	}
+}

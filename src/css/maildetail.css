@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Muli");
+.maildetail {
+  width: 550px;
+  font-family: 'Muli', sans-serif; }
+
+.nothing {
+  width: 550px; }
+
+.title {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-left: 30px; }
+  .title span {
+    color: #6c7872;
+    font-size: 12px;
+    line-height: 30px; }
+  .title i {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 16px; }
+
+.from, .address {
+  display: inline-block; }
+
+.address {
+  position: absolute;
+  right: 50px;
+  color: #6c7872;
+  font-size: 12px; }
+
+.subject {
+  margin-top: 30px;
+  font-size: 25px; }
+
+.reply {
+  padding-left: 30px; }
+  .reply textarea {
+    margin-top: 10px;
+    resize: none;
+    border: 1px solid gray;
+    background-color: #fff; }
+
+.send {
+  display: block;
+  border-style: none;
+  outline: 0;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  background-color: #2bd67e;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  margin-top: 10px; }
+  .send:hover {
+    box-shadow: 0 0 20px #2bd67e; }
+
+.body {
+  margin-top: 20px;
+  padding: 20px 30px;
+  font-size: 14px;
+  font-weight: 100; }
+
+.background {
+  background: linear-gradient(180deg, #eee, #fff); }
+
+/*# sourceMappingURL=maildetail.css.map */

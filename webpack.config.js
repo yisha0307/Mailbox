@@ -19,7 +19,8 @@ devServer: {
     inline: true//实时刷新
 },
 plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
 ],
 module: {
     loaders: [
@@ -51,6 +52,7 @@ resolve:{
         extensions: ['.js', '.jsx']
 },
 externals: {
+    "jquery":"jQuery",
     "react":"React",
     "redux":"Redux",
     "react-dom" :"ReactDOM",

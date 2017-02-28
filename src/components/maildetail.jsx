@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import React from 'react'
 import styles from '../css/maildetail.scss'
 
@@ -26,10 +27,16 @@ const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}
 				<form onSubmit = {(e) => {e.preventDefault();
 					if(!message.value.trim()){return;}
 					const subject = 'reply:'+ selected.subject;
-					handlecompose(selected.address, message.value, subject);
+					setTimeout(function(){
+						handlecompose(selected.address, message.value, subject);
+						$('#check').fadeIn(800).fadeOut(300);
+					},1500)
 					message.value ='';
 				}}>
 				<br/>
+				<div className={styles.success} id = 'check'>
+					<i className='fa fa-check-circle' />
+				</div>
 				<textarea cols='75' rows='5'  ref={v => message = v} />
 				<input className ={styles.send} type ='submit' value='SEND'/>
 				</form>
