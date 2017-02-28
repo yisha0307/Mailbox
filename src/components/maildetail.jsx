@@ -27,8 +27,9 @@ const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}
 				<form onSubmit = {(e) => {e.preventDefault();
 					if(!message.value.trim()){return;}
 					const subject = 'reply:'+ selected.subject;
-					setTimeout(function(){
-						handlecompose(selected.address, message.value, subject);
+					const messageV = message.value;
+					setTimeout(function(){	
+						handlecompose(selected.address, messageV, subject);	
 						$('#check').fadeIn(800).fadeOut(300);
 					},1500)
 					message.value ='';

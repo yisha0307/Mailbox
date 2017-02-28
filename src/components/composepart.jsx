@@ -9,9 +9,12 @@ const ComposePart = ({display, handleCompose,validateAddress,validateAdd,validat
 		<h1> New Message</h1>
 		<form onSubmit = {(e)=> {
 			e.preventDefault();
+			const towhomV = towhom.value
+			const mailbodyV = mailbody.value
+			const subjectV = subject.value
 			if(validateAdd && subject.value){
 				setTimeout(function(){
-					handleCompose(towhom.value,mailbody.value,subject.value);
+					handleCompose(towhomV,mailbodyV,subjectV);
 					$('#check').fadeIn(800).fadeOut(300);
 				},1500);
 			}else{
