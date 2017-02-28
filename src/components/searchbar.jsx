@@ -9,7 +9,12 @@ const SearchBar = ({searchText, searchMails}) => {
 			onKeyUp = {(e) => 
 					{if(e.keyCode === 13){
 						searchMails(searchT.value)
-					}}} placeholder='Search mails...'/>
+					}}} 
+			onChange = {function(){
+				if(searchT.value === ''){
+					searchMails('')
+				}
+			}} placeholder='Search mails...'/>
 			<button className={styles.searchBtn} 
 				onClick = {() => searchMails(searchT.value)}>
 				<i className = 'fa fa-search' />
