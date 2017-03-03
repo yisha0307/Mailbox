@@ -7,14 +7,17 @@ import VComposePart from '../containers/vcomposepart'
 import styles from '../css/main.scss'
 
 class Mailbox extends Component{
+	componentDidMount(){
+		this.props.fetchData('../inbox.json');
+	}
 	render(){
 		return(
 		<div className= {styles.mailbox}>
 			<Titlebar />
 			<div className = {styles.flexb}>
-				<VSidebar />
-				<VMailList />
-				<VMailDetail />
+				<VSidebar mails = {this.props.mails}/>
+				<VMailList mails = {this.props.mails}/>
+				<VMailDetail mails = {this.props.mails}/>
 				<VComposePart />
 			</div>
 		</div>)

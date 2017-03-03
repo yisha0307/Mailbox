@@ -14,7 +14,7 @@ const ComposePart = ({display, handleCompose,validateAddress,validateAdd,validat
 			const subjectV = subject.value
 			if(validateAdd && subject.value){
 				setTimeout(function(){
-					handleCompose(towhomV,mailbodyV,subjectV);
+					handleCompose('../inbox.json',towhomV,mailbodyV,subjectV);
 					$('#check').fadeIn(800).fadeOut(300);
 				},1500);
 			}else{

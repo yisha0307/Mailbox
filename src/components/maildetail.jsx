@@ -29,7 +29,7 @@ const MailDetail = ({mails, selectedEmailID, display, deleteemail,handlecompose}
 					const subject = 'reply:'+ selected.subject;
 					const messageV = message.value;
 					setTimeout(function(){	
-						handlecompose(selected.address, messageV, subject);	
+						handlecompose('../inbox.json',selected.address, messageV, subject);	
 						$('#check').fadeIn(800).fadeOut(300);
 					},1500)
 					message.value ='';

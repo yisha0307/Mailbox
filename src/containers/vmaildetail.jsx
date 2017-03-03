@@ -1,28 +1,28 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import MailDetail from '../components/maildetail'
+import {postData, putData} from '../actions.fetchData'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state,ownProps) => {
 	return {
-		mails: state.mails,
+		mails: ownProps.mails,
 		selectedEmailID: state.selectedEmailID,
 		display: state.composeORnot? 'none':'block'
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch,ownProps) => {
 	return {
-		handlecompose: (address,message,subject) => {dispatch({
-			type:'COMPOSE',
-			from: 'Chen Yisha',
-			address:address,
-			time: timeFormat(new Date()),
-			message:message,
-			subject: subject,
-			tag:'sent',
-			read:true
-		})},
-		deleteemail: (mails,id,origTag)=> {dispatch({type: 'MOVE_MAIL',mails,id,origTag,tag:'deleted'})}
+		handlecompose: (url,address,message,subject) => {dispatch(postData(
+			url, address, message, subject))},
+		deleteemail: (url,mails,id,origTag)=> {
+			dispatch(putData(url,"tag", "deleted"));
+			dispatch({
+				type: 'MOVE_MAIL',
+				mails: ownProps.mails,
+				origTag: origTag
+			})
+		}
 	}
 }
 

@@ -1,16 +1,17 @@
 import React,{Component} from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import Mailbox from './components/app'
+import VMailbox from './containers/vmailbox'
 import {createStore} from 'redux'
-import inboxApp from '../reducers.js'
+import configureStore from './configureStore'
 
-const store = createStore(inboxApp)
+const store = configureStore() //加了一个thunk的middleware
+
 class App extends Component{
 	render(){
 		return(
 		<Provider store={store}>
-			<Mailbox />
+			<VMailbox />
 		</Provider>)
 	}
 }

@@ -1,33 +1,27 @@
 //import MAILS from './src/inbox.json';
 import {combineReducers} from 'redux'
-import MAILS from './src/inbox.json'
 //修改成四个:mails/currentSection/selectedEmailID/composeORnot
 //1、mails
 //数据库里所有的Mails(包括显示的和没显示的)
 //先对MAILS进行处理，每个加上一个id
-let id = 0
-for(const mail of MAILS){
-	mail.id = id++;
-}
-console.log(MAILS);
 
-const mails = (state = MAILS, action) => {
+const mails = (state = [], action) => {
 	switch(action.type){
-		case 'COMPOSE':
-			return [...state, {from: action.from, address: action.address, time:action.time, message: action.message, subject:action.subject, id: id++, tag: action.tag, read:'true'}] 
-		case 'MOVE_MAIL':
-			//根据id把这封邮件找出来，tag改成'deleted'
-			return state.map(mail => {
-				if(mail.id !== action.id){return mail;}else{
-					return(Object.assign({}, mail, {"tag": action.tag}));
-				}
-			})
-		case 'OPEN_MAIL':
-			return state.map(mail => {
-				if(mail.id !== action.id){return mail;}else{
-					return(Object.assign({},mail,{"read":"true"}));
-				}
-			})
+		case 'FETCH_DATA_SUCCESS':
+			let id = 0
+			for (const mail of action.mails){
+				mail.id = id++
+			}
+			return action.mails
+		default:
+			return state
+	}
+}
+
+const hasError = (state = false, action) => {
+	switch(action.type){
+		case 'HAS_ERRORED':
+			return action.hasErrored
 		default:
 			return state
 	}
@@ -116,6 +110,6 @@ const validateText = (state = null, action) => {
 	}
 }
 
-const inboxApp = combineReducers({mails,searchText,currentSection,selectedEmailID,composeORnot,showUnread,validateAdd,validateText});
+const inboxApp = combineReducers({mails,hasError,searchText,currentSection,selectedEmailID,composeORnot,showUnread,validateAdd,validateText});
 export default inboxApp
 

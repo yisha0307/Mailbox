@@ -2,12 +2,12 @@ import React from 'react'
 import Sidebar from '../components/sidebar'
 import {connect} from 'react-redux'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
 	return {
 		currentSection: state.currentSection,
-		unreadcount: countunread(state.mails),
-		trashcount: counttrash(state.mails),
-		sentcount: countsent(state.mails)
+		unreadcount: countunread(ownProps.mails),
+		trashcount: counttrash(ownProps.mails),
+		sentcount: countsent(ownProps.mails)
 	}
 }
 

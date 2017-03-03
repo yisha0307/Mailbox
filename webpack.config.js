@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglify-js-plugin');
 
 module.exports = {
-    devtool: false,
+    devtool: "eval-source-map",
     entry: __dirname + '/src/index.jsx',
 //webpack的入口文件只有一个，所以写的所有components甚至包括css/json什么的，都要引用在这里
 output:{
@@ -57,5 +57,6 @@ externals: {
     "redux":"Redux",
     "react-dom" :"ReactDOM",
     "react-redux":"ReactRedux"
+    "thunk":"ReduxThunk"
 },
 };

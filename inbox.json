@@ -1,4 +1,4 @@
-[
+{"mails": [
 	{
 		"from": "Maxime Preaux",
 		"address": "maxime@codepen.io",
@@ -161,4 +161,4 @@
 		"tag": "inbox",
 		"read": "true"
 	}
-]
+]}
