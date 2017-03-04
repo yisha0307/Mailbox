@@ -2,12 +2,12 @@ import React from 'react'
 import MailList from '../components/maillist'
 import {connect} from 'react-redux'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, state) => {
 	return {
 		searchText: state.searchText,
 		selectedEmailID :state.selectedEmailID ,
 		showunread: state.showUnread,
-		mails: state.showUnread? ownProps.mails.filter(mail => mail.read==='false') : ownProps.mails,
+		mails: state.showUnread? state.mails.filter(mail => mail.read==='false') : state.mails,
 		currentSection: state.currentSection,
 		display: state.composeORnot? 'none':'block'
 	}

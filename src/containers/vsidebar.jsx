@@ -2,16 +2,16 @@ import React from 'react'
 import Sidebar from '../components/sidebar'
 import {connect} from 'react-redux'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, state) => {
 	return {
 		currentSection: state.currentSection,
-		unreadcount: countunread(ownProps.mails),
-		trashcount: counttrash(ownProps.mails),
-		sentcount: countsent(ownProps.mails)
+		unreadcount: countunread(state.mails),
+		trashcount: counttrash(state.mails),
+		sentcount: countsent(state.mails)
 	}
 }
 
-const mapDispatchToProps = (dispatch,ownProps) =>{
+const mapDispatchToProps = (dispatch) =>{
 	return {
 		turncompose: () => {
 			dispatch({type: 'TURN_COMPOSE'})

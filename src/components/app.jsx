@@ -15,9 +15,9 @@ class Mailbox extends Component{
 		<div className= {styles.mailbox}>
 			<Titlebar />
 			<div className = {styles.flexb}>
-				<VSidebar mails = {this.props.mails}/>
-				<VMailList mails = {this.props.mails}/>
-				<VMailDetail mails = {this.props.mails}/>
+				<VSidebar />
+				<VMailList />
+				<VMailDetail />
 				<VComposePart />
 			</div>
 		</div>)
